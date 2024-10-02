@@ -1,13 +1,14 @@
 <?php
 
+// adds dynamic title tag support
 function mycustomtheme_theme_support()
 {
-    // adds dynamic title tag support
     add_theme_support('title-tag');
 }
 
 add_action('after_setup_theme', 'mycustomtheme_theme_support');
 
+// register stylesheets to wp_head()
 function mycustomtheme_register_styles()
 {
     $version = wp_get_theme()->get('Version');
@@ -18,6 +19,7 @@ function mycustomtheme_register_styles()
 
 add_action('wp_enqueue_scripts', 'mycustomtheme_register_styles');
 
+// register scripts to wp_footer()
 function mycustomtheme_register_scripts()
 {
     $version = wp_get_theme()->get('Version');
